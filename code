@@ -1,0 +1,44 @@
+tableData = [['apple', 'oranges', 'cherries', 'banana'],
+             ['Alice', 'Bobbbbbbbbbbbbbbbbbbbb', 'Carol', 'David'],
+             ['dogs', 'cats', 'moose', 'goose']]
+
+
+
+def printTable(tableItem):
+
+
+    colWidths = [0] * len(tableItem)
+
+
+
+    for x in range(len(tableItem)):
+
+        for y in range (len(tableItem[x])):
+	    
+            if len(tableItem[x][y]) > colWidths[x]:
+		
+                colWidths[x] = len(tableItem[x][y])
+	    
+	  
+		    
+	  
+        
+    colWidths.sort(reverse=True)	
+    print (colWidths)
+    print(colWidths[0])
+	    
+
+
+    for i in range(len(tableItem[0])):
+
+	
+        for k in range(len(tableItem)):
+	        #print(tableItem[k][i], end = '')
+	        print (tableItem[k][i].rjust(colWidths[0]), end = ' ')
+		
+		
+       
+    
+        print ('\n') 
+    
+printTable (tableData)
